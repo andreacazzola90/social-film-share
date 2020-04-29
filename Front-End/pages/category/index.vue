@@ -1,20 +1,23 @@
 <template>
   <div class="container section">
-    welcome on this private page, <em>{{user.username}}</em>
+      <h1>categoria: All</h1>
+      inizio
+      <ListVideo v-if="user" :user="user" />
+      fine
   </div>
 </template>
 
 <script>
+import ListVideo from '~/components/ListVideo'
+
 export default {
   components: {
+      ListVideo
   },
   middleware: 'authenticated',
   computed: {
     user() {
       return this.$store.state.auth.user
-    },
-    categories() {
-      return this.$store.state.category.categories
     }
   }
 }

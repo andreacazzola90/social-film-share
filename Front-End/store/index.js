@@ -5,5 +5,8 @@ export const mutations = {}
 export const actions = {
   nuxtServerInit({ dispatch }, { req, app }) {
     return dispatch('auth/nuxtServerInit', { req, app })
+  },
+  fetchCategories (){
+    console.log('fetch')
   }
 }
